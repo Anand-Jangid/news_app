@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:news_app/Database/database_helper.dart';
 import 'package:news_app/Model/news_article.dart';
 import 'package:news_app/locator.dart';
-import 'package:news_app/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NewsTile extends StatelessWidget {

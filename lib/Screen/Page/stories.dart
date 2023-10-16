@@ -5,7 +5,6 @@ import 'package:news_app/Networking/news_api.dart';
 import 'package:news_app/Screen/widgets/news_tile.dart';
 import 'package:news_app/locator.dart';
 
-import '../../main.dart';
 
 class Stories extends StatefulWidget {
   const Stories({super.key, required this.story});

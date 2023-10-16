@@ -13,9 +13,9 @@ class _HomePageState extends State<HomePage> {
   int _index = 0;
 
   final screens = [
-    Stories(story: STORY.EVERYTHING,),
-    Stories(story: STORY.TOP_HEADLINES,),
-    Stories(story: STORY.SAVED,)
+    const Stories(story: STORY.EVERYTHING,),
+    const Stories(story: STORY.TOP_HEADLINES,),
+    const Stories(story: STORY.SAVED,)
   ];
 
   @override
@@ -29,14 +29,14 @@ class _HomePageState extends State<HomePage> {
         data: NavigationBarThemeData(
             indicatorColor: Colors.blue.shade100,
             labelTextStyle: MaterialStateProperty.all(
-              TextStyle(
+              const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
               ),
             )),
         child: NavigationBar(
             labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-            animationDuration: Duration(seconds: 1),
+            animationDuration: const Duration(seconds: 1),
             selectedIndex: _index,
             onDestinationSelected: (index) {
               setState(() {
@@ -44,11 +44,11 @@ class _HomePageState extends State<HomePage> {
               });
             },
             destinations: [
-              NavigationDestination(
+              const NavigationDestination(
                   icon: Icon(Icons.all_inclusive_outlined), label: 'All'),
-              NavigationDestination(
+              const NavigationDestination(
                   icon: Icon(Icons.trending_up), label: 'Trending',),
-              NavigationDestination(
+              const NavigationDestination(
                   icon: Icon(Icons.person), label: 'Profile',),
             ]),
       ),

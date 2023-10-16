@@ -1,8 +1,4 @@
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
 import 'package:dio/dio.dart';
-import 'package:news_app/Constants/enums.dart';
 import 'package:news_app/Constants/exceptions.dart';
 import 'package:news_app/Model/news_article.dart';
 
@@ -26,7 +22,7 @@ class NewsAPI {
       if (e.type == DioExceptionType.connectionError) {
         throw NetworkException("Check your internet connection");
       } else {
-        throw e;
+        rethrow;
       }
     }
   }
@@ -48,7 +44,7 @@ class NewsAPI {
       if (e.type == DioExceptionType.connectionError) {
         throw NetworkException("Check your internet connection");
       } else {
-        throw e;
+        rethrow;
       }
     }
   }
