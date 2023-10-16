@@ -1,6 +1,9 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/Connectivity/internet_connectivity.dart';
 import 'package:news_app/Constants/enums.dart';
 import 'package:news_app/Screen/Page/stories.dart';
+import 'package:news_app/locator.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,11 +15,25 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _index = 0;
 
+  final Connectivity connectivity = Connectivity();
+  ConnectivityResult connectionStatus = ConnectivityResult.none;
+
   final screens = [
-    const Stories(story: STORY.EVERYTHING,),
-    const Stories(story: STORY.TOP_HEADLINES,),
-    const Stories(story: STORY.SAVED,)
+    const Stories(
+      story: STORY.EVERYTHING,
+    ),
+    const Stories(
+      story: STORY.TOP_HEADLINES,
+    ),
+    const Stories(
+      story: STORY.SAVED,
+    )
   ];
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +52,8 @@ class _HomePageState extends State<HomePage> {
               ),
             )),
         child: NavigationBar(
-            labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+            labelBehavior:
+                NavigationDestinationLabelBehavior.onlyShowSelected,
             animationDuration: const Duration(seconds: 1),
             selectedIndex: _index,
             onDestinationSelected: (index) {
@@ -47,9 +65,13 @@ class _HomePageState extends State<HomePage> {
               const NavigationDestination(
                   icon: Icon(Icons.all_inclusive_outlined), label: 'All'),
               const NavigationDestination(
-                  icon: Icon(Icons.trending_up), label: 'Trending',),
+                icon: Icon(Icons.trending_up),
+                label: 'Trending',
+              ),
               const NavigationDestination(
-                  icon: Icon(Icons.person), label: 'Profile',),
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
             ]),
       ),
     );

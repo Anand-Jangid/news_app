@@ -58,14 +58,14 @@ class NewsTile extends StatelessWidget {
             // const Spacer(),
             Text(
               article.title,
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
             const SizedBox(
               height: 10,
             ),
             Text(
               article.description ?? "null",
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 15,
               ),
             ),
@@ -79,13 +79,13 @@ class NewsTile extends StatelessWidget {
                     onPressed: () async {
                       await locator<DatabaseHelper>().addArticle(article);
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.bookmark_outline,
                       size: 30,
                     )),
                 IconButton(
                     onPressed: _launchUrl,
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.launch,
                       size: 30,
                     ))
